@@ -1,26 +1,63 @@
 @import "tailwindcss";
+@import "@heroui/styles";
 
 :root {
+  color-scheme: light;
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0a0a0a;
+  --surface: #ffffff;
+  --surface-foreground: #0a0a0a;
+  --surface-secondary: #f5f5f5;
+  --surface-tertiary: #e5e5e5;
+  --overlay: #ffffff;
+  --overlay-foreground: #0a0a0a;
+  --muted: #525252;
+  --default: #f5f5f5;
+  --default-foreground: #0a0a0a;
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
+  --focus: #10b981;
+  --field-background: #ffffff;
+  --field-foreground: #0a0a0a;
+  --field-placeholder: #737373;
+  --border: #e5e5e5;
+  --separator: #e5e5e5;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--accent);
+  --color-primary-foreground: var(--accent-foreground);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    color-scheme: dark;
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #f5f5f5;
+    --surface: #171717;
+    --surface-foreground: #f5f5f5;
+    --surface-secondary: #262626;
+    --surface-tertiary: #404040;
+    --overlay: #171717;
+    --overlay-foreground: #f5f5f5;
+    --muted: #a3a3a3;
+    --default: #262626;
+    --default-foreground: #f5f5f5;
+    --accent: #10b981;
+    --accent-foreground: #ffffff;
+    --focus: #10b981;
+    --field-background: #171717;
+    --field-foreground: #f5f5f5;
+    --field-placeholder: #a3a3a3;
+    --border: #404040;
+    --separator: #404040;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: ui-sans-serif, system-ui, sans-serif;
 }
