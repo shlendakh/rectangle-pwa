@@ -1,4 +1,4 @@
-import type { SheetLayout } from "@/services/rectangle/types"
+import type { SheetLayout } from "@/services/rectangle/rectangle.types"
 import { formatNumber } from "./number-format"
 
 interface CutMarker {
@@ -144,7 +144,7 @@ interface SheetSvgProps {
 
 export function SheetSvg({ sheet }: SheetSvgProps) {
   const baseSheetTextSize = Math.max(14, Math.floor(Math.min(sheet.width, sheet.height) / 28))
-  const cutLabelSize = Math.max(20, Math.floor(baseSheetTextSize * 1.25))
+  const cutLabelSize = Math.max(12, Math.floor(baseSheetTextSize * 0.85))
   const cutMarkers = computeCutMarkers(sheet, cutLabelSize)
 
   return (

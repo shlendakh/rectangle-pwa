@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from "@heroui/react"
-import type { SheetLayout } from "@/services/rectangle/types"
+import type { SheetLayout } from "@/services/rectangle/rectangle.types"
 import { formatPercent } from "./number-format"
-import { SheetSvg } from "./sheet-svg"
+import { SheetSvg } from "./SheetSvg"
 
 interface SheetsSectionProps {
   sheets: SheetLayout[]

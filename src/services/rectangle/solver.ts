@@ -7,7 +7,7 @@ import type {
   SolverFlowResult,
   Strategy,
   StrategySummary,
-} from "./types"
+} from "./rectangle.types"
 
 const STRATEGIES: Strategy[] = [
   {

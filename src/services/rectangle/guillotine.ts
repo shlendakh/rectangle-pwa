@@ -13,7 +13,7 @@ import type {
   SheetLayout,
   SplitHeuristic,
   Strategy,
-} from "./types"
+} from "./rectangle.types"
 
 const EPSILON = 1e-9
 
