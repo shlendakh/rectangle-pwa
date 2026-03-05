@@ -1,13 +1,8 @@
 import { Card, CardContent, CardHeader } from "@heroui/react"
-
-export interface UnplacedEntry {
-  key: string
-  label: string
-  count: number
-}
+import type { UnplacedSizeEntry } from "@/services/rectangle/rectangle-view"
 
 interface UnplacedCardProps {
-  entries: UnplacedEntry[]
+  entries: UnplacedSizeEntry[]
 }
 
 export function UnplacedCard({ entries }: UnplacedCardProps) {

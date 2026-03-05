@@ -130,3 +130,11 @@ export interface SolverFlowResult {
   bestResult: PackingResult
   strategySummaries: StrategySummary[]
 }
+
+export interface ImportedRectangleData {
+  sourceFileName: string
+  importedAt: string
+  sheet: SheetDefinition
+  configuration: PackingConfiguration
+  rectangles: RectangleRequest[]
+}
