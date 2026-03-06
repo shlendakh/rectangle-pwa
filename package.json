@@ -2,6 +2,7 @@
   "name": "rectangle-pwa",
   "version": "0.1.0",
   "private": true,
+  "license": "SEE LICENSE IN LICENSE",
   "packageManager": "npm@11.7.0",
   "engines": {
     "node": "^22.14.0"
@@ -24,6 +25,7 @@
     "@heroui/styles": "^3.0.0-beta.8",
     "date-fns": "^4.1.0",
     "dotenv": "^17.3.1",
+    "html2pdf.js": "^0.14.0",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
