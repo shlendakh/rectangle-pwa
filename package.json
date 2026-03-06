@@ -2,6 +2,7 @@
   "name": "rectangle-pwa",
   "version": "0.1.0",
   "private": true,
+  "license": "SEE LICENSE IN LICENSE",
   "packageManager": "npm@11.7.0",
   "engines": {
     "node": "^22.14.0"

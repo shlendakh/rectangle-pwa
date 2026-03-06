@@ -57,7 +57,7 @@ export default function RootLayout({
         {children}
         <footer className="p-4 text-center text-sm text-gray-500">
           &copy; {new Date().getFullYear()} Paweł Szlendak | {""}
-          <Link href="http://github.com/shlendakh">@shlendakh</Link> | CC-BY-NC 4.0
+          <Link href="http://github.com/shlendakh">@shlendakh</Link> | Rectangle Cut License v1.0
         </footer>
         <PwaRegistration />
       </body>

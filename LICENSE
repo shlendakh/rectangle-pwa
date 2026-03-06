@@ -1,0 +1,28 @@
+Rectangle Cut License v1.0
+
+Copyright (c) 2026 Pawel Szlendak
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use,
+copy, modify, and run the Software for any purpose, including commercial
+internal/business use, subject to the conditions below.
+
+1. You may distribute original or modified copies of the Software only when:
+   - no fee is charged for the Software itself, and
+   - this license text and copyright notice are included.
+
+2. You may not, without prior written permission from the copyright holder:
+   - sell, sublicense, or commercially distribute the Software (original or modified),
+   - provide the Software as a paid hosted service (SaaS/PaaS/API),
+   - include the Software in a paid product where the Software is a substantial
+     part of the product's value.
+
+3. Trademarks, logos, and branding are not licensed by this license.
+
+4. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING
+   FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+   DEALINGS IN THE SOFTWARE.
