@@ -96,7 +96,7 @@ export function ThemeCycleButton() {
   const nextPreference = getNextPreference(preference)
 
   return (
-    <div className="fixed top-4 right-4 z-50">
+    <div className="z-50 flex w-full justify-end p-4 pb-0 md:fixed md:top-4 md:right-4 md:w-auto md:p-0">
       <Button
         aria-label={`Theme: ${preference}. Click to switch to ${nextPreference}.`}
         className="border-border bg-surface min-w-0 border text-(--foreground) shadow-sm"

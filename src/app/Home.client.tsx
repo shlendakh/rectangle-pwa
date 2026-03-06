@@ -12,6 +12,7 @@ import {
 } from "@heroui/react"
 import { type ChangeEvent, type DragEvent, useMemo, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
+import { CutHistorySection } from "@/components/history/CutHistorySection"
 import { ConfigNumberField } from "@/components/ConfigNumberField"
 import { SupportAlert } from "@/components/SupportAlert"
 import { defaultPackingConfiguration, defaultSheet } from "@/services/rectangle/defaults"
@@ -132,11 +133,41 @@ export default function HomeClient() {
   return (
     <div className="bg-background text-foreground flex min-h-screen justify-center p-6">
       <div className="flex w-full max-w-3xl flex-col gap-6">
+        <Card className="border-border border shadow-none">
+          <CardHeader>
+            <h1 className="text-xl font-semibold">Rectangle Cut</h1>
+          </CardHeader>
+          <CardContent className="space-y-2 text-sm">
+            <p>
+              This app helps you optimize rectangular cuts from sheet materials like plywood, MDF,
+              and particle board.
+            </p>
+            <p>
+              All calculations run locally in your browser, and all saved data stays local on your
+              device.
+            </p>
+            <p>
+              Rectangle Cut is still under development. Feel free to contribute on{" "}
+              <Link
+                className="text-emerald-500 underline"
+                href="https://github.com/shlendakh"
+                rel="noreferrer"
+                target="_blank"
+              >
+                GitHub
+              </Link>
+              . This tool is and will remain free to use.
+            </p>
+          </CardContent>
+        </Card>
+
+        <CutHistorySection />
+
         <Card className="border-border w-full border shadow-none">
           <CardHeader>
-            <h1 className="text-2xl font-semibold">Rectangle Cut</h1>
+            <h2 className="text-xl font-semibold">Process New Cuts</h2>
           </CardHeader>
-          <CardContent className="flex flex-col items-start gap-4">
+          <CardContent className="flex flex-col items-start gap-4 text-sm">
             <p>
               Import a CSV file with columns: Name{" "}
               <span className="font-light italic">(optional)</span>, Qty, Width, Height. You can
@@ -245,14 +276,14 @@ export default function HomeClient() {
               </Alert>
             )}
           </CardContent>
-          <CardFooter className="border-separator flex flex-wrap gap-3 px-6 py-4">
+          <CardFooter className="border-separator flex flex-wrap gap-3 py-4">
             <Button
               isDisabled={!canSubmit}
               onPress={() => {
                 void submitImport()
               }}
               variant="primary"
-              size="sm"
+              size="lg"
               className="w-full"
             >
               {isImporting ? "Processing..." : "Proceed"}
@@ -264,7 +295,7 @@ export default function HomeClient() {
 
         <Card className="border-border border shadow-none">
           <CardHeader>
-            <h2 className="text-lg font-semibold">Hail to Jukka Jylänki</h2>
+            <h2 className="text-xl font-semibold">Hail to Jukka Jylänki</h2>
           </CardHeader>
           <CardContent className="space-y-2 text-sm">
             <p>

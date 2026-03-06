@@ -138,3 +138,11 @@ export interface ImportedRectangleData {
   configuration: PackingConfiguration
   rectangles: RectangleRequest[]
 }
+
+export interface CutHistoryEntry {
+  id: string
+  sourceFileName: string
+  generatedAt: string
+  importedData: ImportedRectangleData
+  result: SolverFlowResult
+}
