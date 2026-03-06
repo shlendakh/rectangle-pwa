@@ -1,4 +1,4 @@
-# Rectangle Cut PWA
+# Rectangle Cut
 
 Link to the tool: [Rectangle Cut App](https://rectangle-pwa.vercel.app/)
 
