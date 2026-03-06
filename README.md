@@ -1,5 +1,7 @@
 # Rectangle Cut PWA
 
+Link to the tool: [Rectangle Cut App](https://rectangle-pwa.vercel.app/)
+
 Rectangle Cut is a Progressive Web App (PWA) for optimizing rectangular cuts from sheet materials such as plywood, MDF, and particle board.
 
 The app is designed for workshop use: import a part list from CSV, configure sheet + kerf, run packing, and review visual cutting layouts.
