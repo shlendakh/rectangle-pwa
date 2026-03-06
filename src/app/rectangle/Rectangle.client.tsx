@@ -181,6 +181,14 @@ export default function RectangleClient() {
               {isResultLoadedFromHistory && (
                 <p className="text-sm text-neutral-500">Loaded from saved history.</p>
               )}
+              <p className="text-sm text-neutral-500">
+                Sheet: {formatNumber(importedData?.sheet.width ?? 0)} x{" "}
+                {formatNumber(importedData?.sheet.height ?? 0)} mm, Kerf:{" "}
+                {formatNumber(importedData?.configuration.kerf ?? 0)} mm
+              </p>
+              <p className="text-sm text-neutral-500">
+                Generated at: {formatDateTime(generatedAt)}
+              </p>
               <p className="text-xs text-neutral-500">
                 This result is stored locally on this device in browser storage.
               </p>
@@ -192,7 +200,7 @@ export default function RectangleClient() {
 
           <UnplacedCard entries={unplacedSizeEntries} />
 
-          <SheetsSection sheets={bestResult.sheets} simpleView />
+          <SheetsSection sheets={bestResult.sheets} simpleView sheetInfo={importedData?.sheet} />
         </>
       ) : (
         <>
@@ -258,7 +266,11 @@ export default function RectangleClient() {
 
           <UnplacedCard entries={unplacedSizeEntries} />
 
-          <SheetsSection sheets={bestResult.sheets} simpleView={false} />
+          <SheetsSection
+            sheets={bestResult.sheets}
+            simpleView={false}
+            sheetInfo={importedData?.sheet}
+          />
 
           <Card>
             <CardHeader>
@@ -307,9 +319,10 @@ export default function RectangleClient() {
             <Button
               className="flex-1"
               onPress={() => {
-                // Export action will be implemented in a later step.
+                // TODO - implement PDF export
               }}
-              variant="outline"
+              variant="primary"
+              size="lg"
             >
               Export PDF
             </Button>
@@ -321,7 +334,8 @@ export default function RectangleClient() {
                   behavior: "smooth",
                 })
               }}
-              variant="primary"
+              variant="secondary"
+              size="lg"
             >
               Back to Top
             </Button>
