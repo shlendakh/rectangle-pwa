@@ -1,6 +1,6 @@
-# CutStack planner
+# CutStack Planner
 
-Link to the tool: [CutStack Planner](https://rectangle-pwa.vercel.app/)
+Link to the tool: [CutStack Planner](https://cutstack-planner.vercel.app/)
 
 CutStack Planner is a Progressive Web App (PWA) for optimizing rectangular cuts from sheet materials such as plywood, MDF, and particle board.
 
