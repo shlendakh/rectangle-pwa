@@ -1,7 +1,7 @@
 import { storedImportedDataSchema } from "./rectangle.schema"
 import type { ImportedRectangleData } from "./rectangle.types"
 
-const STORAGE_KEY = "rectangle-cut:imported-rectangles"
+const STORAGE_KEY = "cutstack-planner:imported-rectangles"
 
 export function saveImportedRectangleData(data: ImportedRectangleData): void {
   sessionStorage.setItem(STORAGE_KEY, JSON.stringify(data))
