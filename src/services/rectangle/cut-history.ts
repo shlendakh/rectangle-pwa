@@ -1,8 +1,8 @@
 import { storedCutHistorySchema } from "./rectangle.schema"
 import type { CutHistoryEntry, ImportedRectangleData, SolverFlowResult } from "./rectangle.types"
 
-const HISTORY_STORAGE_KEY = "rectangle-cut:history"
-const ACTIVE_HISTORY_ENTRY_ID_KEY = "rectangle-cut:active-history-entry-id"
+const HISTORY_STORAGE_KEY = "cutstack-planner:history"
+const ACTIVE_HISTORY_ENTRY_ID_KEY = "cutstack-planner:active-history-entry-id"
 
 function canUseWindow(): boolean {
   return typeof window !== "undefined"

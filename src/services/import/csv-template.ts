@@ -9,7 +9,7 @@ export function downloadCsvTemplate(): void {
   const anchor = document.createElement("a")
 
   anchor.href = objectUrl
-  anchor.download = "rectangle-cut-template.csv"
+  anchor.download = "cutstack-planner-template.csv"
   anchor.click()
 
   URL.revokeObjectURL(objectUrl)

@@ -1,6 +1,6 @@
 /* global self, caches, Response */
 
-const CACHE_NAME = "rectangle-cut-v1"
+const CACHE_NAME = "cutstack-planner-cache-v1"
 const APP_SHELL = ["/", "/manifest.webmanifest", "/favicon/favicon.ico"]
 
 self.addEventListener("install", (event) => {
@@ -17,11 +17,7 @@ self.addEventListener("activate", (event) => {
     caches
       .keys()
       .then((keys) =>
-        Promise.all(
-          keys
-            .filter((key) => key !== CACHE_NAME)
-            .map((key) => caches.delete(key)),
-        ),
+        Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))),
       )
       .then(() => self.clients.claim()),
   )
@@ -34,7 +30,9 @@ self.addEventListener("fetch", (event) => {
 
   if (event.request.mode === "navigate") {
     event.respondWith(
-      fetch(event.request).catch(() => caches.match("/").then((response) => response || Response.error())),
+      fetch(event.request).catch(() =>
+        caches.match("/").then((response) => response || Response.error()),
+      ),
     )
     return
   }

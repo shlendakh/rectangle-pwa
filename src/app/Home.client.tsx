@@ -135,7 +135,7 @@ export default function HomeClient() {
       <div className="flex w-full max-w-3xl flex-col gap-6">
         <Card className="border-border border shadow-none">
           <CardHeader>
-            <h1 className="text-xl font-semibold">Rectangle Cut</h1>
+            <h1 className="text-xl font-semibold">CutStack Planner</h1>
           </CardHeader>
           <CardContent className="space-y-2 text-sm">
             <p>
@@ -147,7 +147,7 @@ export default function HomeClient() {
               device.
             </p>
             <p>
-              Rectangle Cut is still under development. Feel free to contribute on{" "}
+              CutStack Planner is still under development. Feel free to contribute on{" "}
               <Link
                 className="text-emerald-500 underline"
                 href="https://github.com/shlendakh"

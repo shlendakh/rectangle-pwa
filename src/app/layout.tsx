@@ -5,14 +5,14 @@ import "./globals.css"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Rectangle Cut",
+  title: "CutStack Planner",
   description: "Optimize rectangular cuts for woodworking sheets.",
   manifest: "/manifest.webmanifest",
-  applicationName: "Rectangle Cut",
+  applicationName: "CutStack Planner",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Rectangle Cut",
+    title: "CutStack Planner",
   },
   icons: {
     icon: "/favicon/favicon.ico",
@@ -57,7 +57,10 @@ export default function RootLayout({
         {children}
         <footer className="p-4 text-center text-sm text-gray-500">
           &copy; {new Date().getFullYear()} Paweł Szlendak | {""}
-          <Link href="http://github.com/shlendakh">@shlendakh</Link> | Rectangle Cut License v1.0
+          <Link href="http://github.com/shlendakh">@shlendakh</Link> |{" "}
+          <Link href="https://github.com/shlendakh/rectangle-pwa/blob/main/LICENSE">
+            CutStack Planner License v1.0
+          </Link>
         </footer>
         <PwaRegistration />
       </body>
