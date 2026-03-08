@@ -1,19 +1,27 @@
 import { z } from "zod"
 import { normalizeNumericString } from "./numeric-normalization"
 
-const positiveConfigNumberSchema = z
-  .string()
-  .trim()
-  .min(1)
-  .transform(Number)
-  .pipe(z.number().finite().positive())
+function parseNormalizedNumber(value: unknown): unknown {
+  if (typeof value === "number") {
+    return value
+  }
 
-const nonNegativeConfigNumberSchema = z
-  .string()
-  .trim()
-  .min(1)
-  .transform(Number)
-  .pipe(z.number().finite().nonnegative())
+  if (typeof value !== "string") {
+    return value
+  }
+
+  const normalized = normalizeNumericString(value)
+
+  if (normalized.length === 0) {
+    return Number.NaN
+  }
+
+  return Number(normalized)
+}
+
+const positiveConfigNumberSchema = z.preprocess(parseNormalizedNumber, z.number().positive())
+
+const nonNegativeConfigNumberSchema = z.preprocess(parseNormalizedNumber, z.number().nonnegative())
 
 export const importConfigSchema = z.object({
   sheetWidth: positiveConfigNumberSchema,
@@ -21,21 +29,12 @@ export const importConfigSchema = z.object({
   kerf: nonNegativeConfigNumberSchema,
 })
 
-const positiveNumberFromCsvSchema = z.preprocess((value) => {
-  if (typeof value !== "string") {
-    return value
-  }
+const positiveNumberFromCsvSchema = z.preprocess(parseNormalizedNumber, z.number().positive())
 
-  return Number.parseFloat(normalizeNumericString(value))
-}, z.number().finite().positive())
-
-const positiveIntegerFromCsvSchema = z.preprocess((value) => {
-  if (typeof value !== "string") {
-    return value
-  }
-
-  return Number.parseFloat(normalizeNumericString(value))
-}, z.number().finite().int().positive())
+const positiveIntegerFromCsvSchema = z.preprocess(
+  parseNormalizedNumber,
+  z.number().int().positive(),
+)
 
 export const csvRowSchema = z.object({
   name: z.string().trim().optional(),
