@@ -1,5 +1,12 @@
 export function normalizeNumericString(value: string): string {
-  const cleaned = value.trim().replace(/\u00a0/g, "").replace(/\s+/g, "").replace(/'/g, "")
+  const cleaned = value
+    .trim()
+    .replace(/^\ufeff/, "")
+    .replace(/\u00a0/g, "")
+    .replace(/\s+/g, "")
+    .replace(/'/g, "")
+    .replace(/"/g, "")
+
   const lastCommaIndex = cleaned.lastIndexOf(",")
   const lastDotIndex = cleaned.lastIndexOf(".")
 
@@ -12,7 +19,21 @@ export function normalizeNumericString(value: string): string {
   }
 
   if (lastCommaIndex !== -1) {
+    const commaCount = cleaned.split(",").length - 1
+
+    if (commaCount > 1) {
+      return cleaned.replace(/,/g, "")
+    }
+
     return cleaned.replace(",", ".")
+  }
+
+  if (lastDotIndex !== -1) {
+    const dotCount = cleaned.split(".").length - 1
+
+    if (dotCount > 1) {
+      return cleaned.replace(/\./g, "")
+    }
   }
 
   return cleaned
