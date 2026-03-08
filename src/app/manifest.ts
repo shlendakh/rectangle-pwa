@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next"
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Rectangle Cut",
-    short_name: "RectCut",
+    name: "CutStack Planner",
+    short_name: "CutStack",
     description: "Optimize rectangular cuts for woodworking sheets.",
     id: "/",
     scope: "/",
